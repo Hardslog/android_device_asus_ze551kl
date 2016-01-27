@@ -1,10 +1,10 @@
 #device         mount point      fstype        [device2] [length=]
 
-/system`      /dev/block/platform/soc.0/by-name/system      ext4
-/cache        /dev/block/platform/soc.0/by-name/cache       ext4
-/data         /dev/block/platform/soc.0/by-name/userdata    ext4     length=-16384
-/boot         /dev/block/platform/soc.0/by-name/boot        emmc
-/recovery     /dev/block/platform/soc.0/by-name/recovery    emmc
-/misc         /dev/block/platform/soc.0/by-name/misc        emmc
-/sd-ext       /dev/block/mmcblk1p1                         auto     flags=display="SD-Ext";wipeingui;removable
-/usb-otg      /dev/block/sda1  /dev/block/sda              auto     flags=display="USB OTG";storage;removable
+/system`   ext4   /dev/block/platform/soc.0/by-name/system
+/cache     ext4   /dev/block/platform/soc.0/by-name/cache
+/data      ext4   /dev/block/platform/soc.0/by-name/userdata      length=-16384
+/boot      emmc   /dev/block/platform/soc.0/by-name/boot
+/recovery  emmc   /dev/block/platform/soc.0/by-name/recovery
+/misc      emmc   /dev/block/platform/soc.0/by-name/misc
+/sd-ext    auto   /dev/block/mmcblk1p1                            flags=display="SD-Ext";wipeingui;removable
+/usb-otg   auto   /dev/block/sda1  /dev/block/sda                 flags=display="USB OTG";storage;removable
