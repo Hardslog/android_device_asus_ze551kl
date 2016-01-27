@@ -1,0 +1,17 @@
+# Android fstab file.
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
+
+#TODO: Add 'check' as fs_mgr_flags with data partition.
+# Currently we dont have e2fsck compiled. So fs check would failed.
+
+#<src>                                                <mnt_point>  <type>  <mnt_flags and options>                     <fs_mgr_flags>
+/dev/block/bootdevice/by-name/system         /system      ext4    ro,barrier=1,discard                                wait
+/dev/block/bootdevice/by-name/userdata       /data        ext4    nosuid,nodev,barrier=1,noauto_da_alloc,discard      wait,check,encryptable=footer
+/devices/soc.0/7864900.sdhci/mmc_host        /storage/MicroSD   vfat    nosuid,nodev         wait,voldmanaged=MicroSD:auto,noemulatedsd
+/dev/block/zram0             none         swap    defaults zramsize=536870912
+/devices/platform/msm_hsusb_host/usb1/1-1    /storage/USBdisk1  vfat    nosuid,nodev         wait,voldmanaged=USBdisk1:auto
+/devices/platform/msm_hsusb_host/usb1/1-1    /storage/USBdisk2  vfat    nosuid,nodev         wait,voldmanaged=USBdisk2:auto
+/devices/platform/msm_hsusb_host/usb1/1-1    /storage/USBdisk3  vfat    nosuid,nodev         wait,voldmanaged=USBdisk3:auto
+/devices/platform/msm_hsusb_host/usb1/1-1    /storage/USBdisk4  vfat    nosuid,nodev         wait,voldmanaged=USBdisk4:auto
+/devices/platform/msm_hsusb_host/usb1/1-1    /storage/USBdisk5  vfat    nosuid,nodev         wait,voldmanaged=USBdisk5:auto
