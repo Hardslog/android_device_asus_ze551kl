@@ -1,12 +1,10 @@
 #device         mount point      fstype        [device2] [length=]
 
-/system`      /dev/block/bootdevice/by-name/system      ext4
-/cache        /dev/block/bootdevice/by-name/cache       ext4
-/data         /dev/block/bootdevice/by-name/userdata    ext4     length=-16384
-/boot         /dev/block/bootdevice/by-name/boot        emmc
-/recovery     /dev/block/bootdevice/by-name/recovery    emmc
-/misc         /dev/block/bootdevice/by-name/misc        emmc
-/external_sd  /dev/block/mmcblk1p1  /dev/block/mmcblk1  auto     flags=display="Micro SDcard";storage;wipeingui;removable;andsec
-/usb-otg      /dev/block/sda1  /dev/block/sda           auto     flags=display="USB OTG";storage;removable
-/sd-ext       /dev/block/mmcblk1p2                      auto     flags=display="SD-Ext";wipeingui;removable
-
+/system`      dev/block/platform/soc.0/by-name/system      ext4
+/cache        dev/block/platform/soc.0/by-name/cache       ext4
+/data         dev/block/platform/soc.0/by-name/userdata    ext4     length=-16384
+/boot         dev/block/platform/soc.0/by-name/boot        emmc
+/recovery     dev/block/platform/soc.0/by-name/recovery    emmc
+/misc         dev/block/platform/soc.0/by-name/misc        emmc
+/sd-ext       /dev/block/mmcblk1p1                         auto     flags=display="SD-Ext";wipeingui;removable
+/usb-otg      /dev/block/sda1  /dev/block/sda              auto     flags=display="USB OTG";storage;removable
