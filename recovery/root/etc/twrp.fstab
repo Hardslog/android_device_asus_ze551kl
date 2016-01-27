@@ -6,5 +6,5 @@
 /boot      emmc   /dev/block/platform/soc.0/by-name/boot
 /recovery  emmc   /dev/block/platform/soc.0/by-name/recovery
 /misc      emmc   /dev/block/platform/soc.0/by-name/misc
-/sd-ext    auto   /dev/block/mmcblk1p1                            flags=display="SD-Ext";wipeingui;removable
+/sd-ext    auto   /dev/block/mmcblk1p1                            flags=display="SD-Ext";wipeingui;storage;removable
 /usb-otg   auto   /dev/block/sda1  /dev/block/sda                 flags=display="USB OTG";storage;removable
